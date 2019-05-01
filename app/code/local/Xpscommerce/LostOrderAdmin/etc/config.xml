@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Xpscommerce_LostOrderAdmin>
+            <version>1.0</version>
+        </Xpscommerce_LostOrderAdmin>
+    </modules>
+    <admin>
+        <routers>
+            <lostorderadmin>
+                <use>admin</use>
+                <args>
+                    <module>Xpscommerce_LostOrderAdmin</module>
+                    <frontName>lostorderadmin</frontName>
+                </args>
+            </lostorderadmin>
+        </routers>
+    </admin>
+    <adminhtml>
+        <events>
+            <controller_action_layout_render_before_adminhtml_sales_order_view>
+                <observers>
+                    <module_button>
+                        <class>lostorderadmin/observer</class>
+                        <method>addButtonLostOrder</method>
+                    </module_button>
+                </observers>
+            </controller_action_layout_render_before_adminhtml_sales_order_view>
+        </events>
+    </adminhtml>
+    <global>
+        <blocks>
+            <lostorderadmin>
+                <class>Xpscommerce_LostOrderAdmin_Block</class>
+            </lostorderadmin>
+        </blocks>
+        <models>
+            <lostorderadmin>
+                <class>Xpscommerce_LostOrderAdmin_Model</class>
+            </lostorderadmin>
+        </models>
+        <helpers>
+            <lostorderadmin>
+                <class>Xpscommerce_LostOrderAdmin_Helper</class>
+            </lostorderadmin>
+        </helpers>
+    </global>
+</config>
+
