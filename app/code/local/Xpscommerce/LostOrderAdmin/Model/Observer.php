@@ -14,8 +14,7 @@ class Xpscommerce_LostOrderAdmin_Model_Observer {
             return $this;
         }
         $order = Mage::registry('current_order');
-        $url   = Mage::helper("adminhtml")->getUrl(
-            "adminhtml/lostorderadmin/refundorder",
+        $url   = Mage::helper("adminhtml")->getUrl("lostorderadmin/adminhtml_refundorder",
             array('order_id' => $order->getId())
         );
         $message = Mage::helper('lostorderadmin')->__('Is this a lost order and have you sent a replacement?');
