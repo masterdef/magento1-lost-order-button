@@ -13,10 +13,6 @@ class Xpscommerce_LostOrderAdmin_Adminhtml_RefundorderController
         The subtotal should then be added to “Adjustment fee” so that we don’t refund this amount to the customer.
         The Shipping & Handling fee should be added to “Refund Shipping & Handling” so this is refunded to the customer (if 0 then 0 will be refunded to customer)
         After this is done I want a automessage to be added as a comment “[MAGENTO USER NAME]: Order is lost and has been locked for handling. To refund the customer make a manual creditmemo on this order�
-        I hope you understand my thinking here but just to clarify 
-        I have made a video where I do the same steps. 
-        And as always just ask if something needs to be explained better.
-
         Video: 
         https://cl.ly/9f869eb55e92
     **/
