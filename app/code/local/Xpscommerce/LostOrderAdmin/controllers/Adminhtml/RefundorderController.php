@@ -23,6 +23,11 @@ class Xpscommerce_LostOrderAdmin_Adminhtml_RefundorderController
             $creditmemo = $service->prepareCreditmemo($data);
             */
 
+            $creditmemo->setGrandTotal($order->getShippingAmount());
+            $creditmemo->setBaseGrandTotal($order->getShippingAmount());
+            $creditmemo->setAdjustmentNegative($order->getSubtotal());
+            $creditmemo->setBaseAdjustment(-($order->getSubtotal()));
+            $creditmemo->setAdjustment(-($order->getSubtotal()));
             $creditmemo->setRefundRequested(true);
             $creditmemo->register();
 
