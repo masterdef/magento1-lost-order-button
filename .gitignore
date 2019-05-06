@@ -63,3 +63,4 @@ mage
 /skin/adminhtml/base
 /skin/adminhtml/default
 /skin/install
+/bin/*.sh
