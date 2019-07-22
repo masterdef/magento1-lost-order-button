@@ -84,16 +84,16 @@ before_script:
     #- git checkout 2.0;git checkout tags/2.0.2
 
     # Use a github token
-    - if [ -n "$GH_TOKEN" ]; then composer config github-oauth.github.com ${GH_TOKEN}; fi;
+    #- if [ -n "$GH_TOKEN" ]; then composer config github-oauth.github.com ${GH_TOKEN}; fi;
 
     # add composer package under test, composer require will trigger update/install
-    - composer config repositories.travis_to_test git $LOSTORDER_COMPOSER_REPOSITORY_TO_TEST
-    - composer require --prefer-dist $LOSTORDER_COMPOSER_PACKAGE_TO_TEST dev-master
+    #- composer config repositories.travis_to_test git $LOSTORDER_COMPOSER_REPOSITORY_TO_TEST
+    #- composer require --prefer-dist $LOSTORDER_COMPOSER_PACKAGE_TO_TEST dev-master
 
     # run installation command using evn variables set above
-    - php bin/magento setup:install --admin-email "$LOSTORDER_MAGE_ADMIN_EMAIL" --admin-firstname "$LOSTORDER_MAGE_ADMIN_FIRST_NAME" --admin-lastname "$LOSTORDER_MAGE_ADMIN_LAST_NAME" --admin-password "$LOSTORDER_MAGE_ADMIN_PASSWORD" --admin-user "$LOSTORDER_MAGE_ADMIN_USERNAME" --backend-frontname admin --base-url "$LOSTORDER_MAGE_FAKE_URL" --db-host 127.0.0.1 --db-name magento_2_travis --db-user root --session-save files --use-rewrites 1 --use-secure 0 -vvv
+    #- php bin/magento setup:install --admin-email "$LOSTORDER_MAGE_ADMIN_EMAIL" --admin-firstname "$LOSTORDER_MAGE_ADMIN_FIRST_NAME" --admin-lastname "$LOSTORDER_MAGE_ADMIN_LAST_NAME" --admin-password "$LOSTORDER_MAGE_ADMIN_PASSWORD" --admin-user "$LOSTORDER_MAGE_ADMIN_USERNAME" --backend-frontname admin --base-url "$LOSTORDER_MAGE_FAKE_URL" --db-host 127.0.0.1 --db-name magento_2_travis --db-user root --session-save files --use-rewrites 1 --use-secure 0 -vvv
     # test that magento is installed
     - curl "$LOSTORDER_MAGE_FAKE_URL/index.php" > /tmp/output.txt
     # test that pestle is working
-    - pestle.phar hello_world
+    #- pestle.phar hello_world
 script: test 'grep -Fx "magento-2-travis.dev" /tmp/output.txt'
