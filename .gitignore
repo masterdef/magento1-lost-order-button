@@ -66,3 +66,6 @@ mage
 /bin/*.sh
 /shell
 /bin
+/vendor/
+
+
