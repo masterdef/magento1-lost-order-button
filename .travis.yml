@@ -10,7 +10,7 @@ env:
     - LOSTORDER_MAGE_ADMIN_PASSWORD=ih3artmagento
     - LOSTORDER_MAGE_ADMIN_DBNAME=magento_2_travis
     - LOSTORDER_PESTLE_URL=http://pestle.pulsestorm.net
-    - LOSTORDER_COMPOSER_REPOSITORY_TO_TEST=git@github.com:masterdef/magento1-lost-order-button.git
+    - LOSTORDER_COMPOSER_REPOSITORY_TO_TEST=https://github.com/masterdef/magento1-lost-order-button.git
     #- LOSTORDER_COMPOSER_PACKAGE_TO_TEST=pulsestorm/pestle
 addons:
   hosts:
