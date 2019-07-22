@@ -69,6 +69,7 @@ before_script:
     - sudo service apache2 restart
 
     # clone main magento github repository
+    - echo "$LOSTORDER_COMPOSER_REPOSITORY_TO_TEST"
     - git clone $LOSTORDER_COMPOSER_REPOSITORY_TO_TEST
     - ls -la 
 
